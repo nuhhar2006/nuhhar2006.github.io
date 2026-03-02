@@ -95,7 +95,12 @@
             overflow: hidden;
             background: var(--primary-orange);
         }
-        .profile-container img { width: 100%; height: 100%; object-fit: cover; }
+        .profile-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Şəkli dartmadan dairəyə uyğunlaşdırır */
+            display: block;
+        }
 
         /* --- İstatistikler (Daha dolu görünüm için) --- */
         .stats-row { display: flex; gap: 30px; margin-top: 40px; }
