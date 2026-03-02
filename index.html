@@ -3,213 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nuhhər Bəhrəmov | Cyber Security Specialist</title>
+    <title>Nuhhər Bəhrəmov | Portfolio</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
-        /* --- Dəyişənlər və Sıfırlama --- */
         :root {
             --primary: #FF9800;
             --primary-light: #FFCC80;
             --secondary: #1976D2;
             --dark: #2D3436;
-            --light: #F8FAFC;
             --white: #FFFFFF;
-            --glass: rgba(255, 255, 255, 0.85);
-            --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            --bg-light: #F8FAFC;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        body { background-color: var(--white); color: var(--dark); line-height: 1.6; overflow-x: hidden; }
 
-        body {
-            background-color: var(--white);
-            color: var(--dark);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* --- Naviqasiya --- */
+        /* --- Naviqasiya (Mobil Uyğun) --- */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 8%;
+            padding: 15px 5%;
             position: fixed;
             width: 100%;
-            background: var(--glass);
-            backdrop-filter: blur(15px);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid rgba(0,0,0,0.05);
         }
 
-        .logo { font-size: 24px; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
-        .nav-links { display: flex; list-style: none; gap: 30px; }
-        .nav-links a { 
-            text-decoration: none; 
-            color: var(--dark); 
-            font-weight: 600; 
-            font-size: 14px; 
-            transition: var(--transition);
-        }
-        .nav-links a:hover { color: var(--primary); }
+        .logo { font-size: 20px; font-weight: 800; color: var(--primary); }
+
+        .nav-links { display: flex; list-style: none; gap: 15px; }
+        .nav-links a { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 13px; }
+
+        /* --- Section Ümumi --- */
+        section { padding: 100px 5% 60px; }
 
         /* --- Hero Section --- */
-        section { padding: 120px 8%; }
-        
         .hero {
             min-height: 100vh;
             display: flex;
+            flex-direction: row; /* Desktopda yan-yana */
             align-items: center;
             justify-content: space-between;
+            gap: 40px;
             background: radial-gradient(circle at top right, #E3F2FD, transparent);
-            gap: 50px;
         }
 
         .hero-content { flex: 1; }
-        .badge {
-            background: var(--primary);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 50px;
-            font-size: 12px;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 20px;
-        }
+        .hero-content h1 { font-size: clamp(32px, 8vw, 60px); font-weight: 800; line-height: 1.1; margin-bottom: 15px; }
+        .hero-content h2 { font-size: 18px; color: var(--secondary); margin-bottom: 20px; }
 
-        .hero-content h1 { font-size: clamp(40px, 5vw, 65px); font-weight: 800; line-height: 1.1; margin-bottom: 10px; }
-        .hero-content h2 { font-size: 22px; color: var(--secondary); font-weight: 500; margin-bottom: 25px; }
+        .contact-info { list-style: none; margin-bottom: 25px; }
+        .contact-info li { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 14px; color: #555; }
+        .contact-info i { color: var(--primary); width: 18px; }
 
-        .contact-info { list-style: none; margin-bottom: 30px; }
-        .contact-info li { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; font-size: 15px; color: #636e72; }
-        .contact-info i { color: var(--primary); width: 20px; }
-
-        /* --- FOTO KONTEYNERİ --- */
-        .hero-image { flex: 0.8; position: relative; display: flex; justify-content: center; }
+        /* --- Foto (Animasiyalı) --- */
+        .hero-image { flex: 0.8; display: flex; justify-content: center; }
         .profile-card {
-            width: 380px;
-            height: 380px;
-            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; /* Modern asimmetrik forma */
+            width: 320px;
+            height: 320px;
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
             background: var(--primary-light);
             overflow: hidden;
-            border: 10px solid var(--white);
-            box-shadow: 0 40px 80px rgba(0,0,0,0.1);
+            border: 8px solid white;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
             animation: morph 8s ease-in-out infinite;
         }
-        
+
         @keyframes morph {
             0%, 100% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
             50% { border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%; }
         }
 
-        .profile-card img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        .profile-card img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- İstatistiklər --- */
-        .stats { display: flex; gap: 20px; margin-top: 40px; }
+        /* --- İstatistiklər (Flex Wrap əlavə edildi) --- */
+        .stats { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px; }
         .stat-box { 
-            background: var(--white); 
-            padding: 15px 25px; 
-            border-radius: 16px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-            border: 1px solid #f1f1f1;
+            background: white; 
+            padding: 12px 20px; 
+            border-radius: 12px; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            flex: 1; /* Mobildə bərabər bölünmə üçün */
+            min-width: 100px;
+            text-align: center;
         }
-        .stat-box h4 { color: var(--primary); font-size: 20px; }
-        .stat-box p { font-size: 11px; font-weight: 700; text-transform: uppercase; color: #b2bec3; }
+        .stat-box h4 { color: var(--primary); font-size: 18px; }
+        .stat-box p { font-size: 10px; font-weight: 700; color: #999; text-transform: uppercase; }
 
         /* --- Skills Grid --- */
-        .section-title { font-size: 32px; font-weight: 800; margin-bottom: 60px; position: relative; }
-        .section-title::after { content: ''; width: 50px; height: 5px; background: var(--primary); position: absolute; left: 0; bottom: -12px; border-radius: 10px; }
-
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
-        .card {
-            background: var(--light);
-            padding: 40px;
-            border-radius: 24px;
-            transition: var(--transition);
-            border: 1px solid transparent;
-        }
-        .card:hover { 
-            background: var(--white); 
-            transform: translateY(-10px); 
-            box-shadow: 0 30px 60px rgba(0,0,0,0.08); 
-            border-color: var(--primary-light);
-        }
-        .card i { font-size: 35px; color: var(--primary); margin-bottom: 20px; }
-        
-        .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-        .tag { background: white; padding: 5px 12px; border-radius: 8px; font-size: 12px; font-weight: 600; border: 1px solid #eee; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: var(--bg-light); padding: 30px; border-radius: 20px; border: 1px solid transparent; transition: 0.3s; }
+        .card:hover { transform: translateY(-5px); background: white; border-color: var(--primary-light); box-shadow: 0 15px 30px rgba(0,0,0,0.05); }
+        .card i { font-size: 30px; color: var(--primary); margin-bottom: 15px; }
 
         /* --- Footer --- */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 80px 8% 40px;
-            text-align: center;
-            border-radius: 60px 60px 0 0;
-        }
-        .socials { display: flex; justify-content: center; gap: 20px; margin: 30px 0; }
-        .socials a { 
-            width: 50px; height: 50px; 
-            background: rgba(255,255,255,0.1); 
-            display: flex; align-items: center; justify-content: center; 
-            border-radius: 50%; color: white; text-decoration: none;
-            transition: var(--transition);
-        }
-        .socials a:hover { background: var(--primary); transform: rotate(360deg); }
+        footer { background: var(--dark); color: white; padding: 60px 5% 30px; text-align: center; border-radius: 40px 40px 0 0; }
+        .socials { display: flex; justify-content: center; gap: 15px; margin: 20px 0; }
+        .socials a { width: 45px; height: 45px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-size: 18px; }
 
-        /* Mobil Uyğunluq */
-        @media (max-width: 992px) {
-            .hero { flex-direction: column-reverse; text-align: center; padding-top: 150px; }
+        /* ==========================================
+           MOBİL CİHAZLAR ÜÇÜN ÖZƏL AYARLAR (Responsive)
+           ========================================== */
+        @media (max-width: 768px) {
+            nav { padding: 10px 5%; }
+            .nav-links { gap: 10px; }
+            .nav-links a { font-size: 12px; }
+
+            .hero { 
+                flex-direction: column-reverse; /* Şəkil yuxarı, yazı aşağı keçsin */
+                padding-top: 120px;
+                text-align: center;
+            }
+
             .hero-image { width: 100%; }
-            .profile-card { width: 280px; height: 280px; }
+            .profile-card { width: 250px; height: 250px; } /* Mobildə şəkli bir az kiçiltdik */
+
             .contact-info li { justify-content: center; }
+            
             .stats { justify-content: center; }
+            .stat-box { min-width: 45%; } /* Mobildə statlar 2-2 düzülsün */
+
+            section { padding: 80px 5% 40px; }
+        }
+
+        /* Çox kiçik ekranlar üçün (məs. iPhone SE) */
+        @media (max-width: 400px) {
+            .nav-links { display: none; } /* Çox kiçik ekranlarda menyunu gizlədə bilərsən və ya ikon qoya bilərsən */
+            .logo { width: 100%; text-align: center; }
+            .stat-box { min-width: 100%; } /* Statlar tam en tutsun */
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">NUHHAR<span style="color:var(--dark)">.SEC</span></div>
+        <div class="logo">NUHHAR.SEC</div>
         <ul class="nav-links">
             <li><a href="#hero">Giriş</a></li>
-            <li><a href="#skills">Uzmanlıq</a></li>
-            <li><a href="#projects">Layihələr</a></li>
+            <li><a href="#skills">Bacarıqlar</a></li>
             <li><a href="#contact">Əlaqə</a></li>
         </ul>
     </nav>
 
     <section class="hero" id="hero">
-        <div class="hero-content" data-aos="fade-right">
-            <span class="badge">Xoş Gəlmisiniz</span>
-            <h1>Nuhhər Bəhrəmov</h1>
+        <div class="hero-content" data-aos="fade-up">
+            <h1 style="color:var(--primary)">Nuhhər Bəhrəmov</h1>
             <h2>Junior Cyber Security Specialist</h2>
-            <p style="color: #636e72; max-width: 500px; margin-bottom: 30px;">
-                Siber dünyanı daha təhlükəsiz etmək üçün şəbəkə təhlükəsizliyi və sızma testləri üzrə ixtisaslaşıram.
+            <p style="margin-bottom: 20px; font-size: 14px; opacity: 0.8;">
+                Network Security və Penetration Testing sahəsində gənc araşdırmaçı.
             </p>
             
             <ul class="contact-info">
                 <li><i class="fas fa-phone"></i> +994 70 869 09 89</li>
                 <li><i class="fas fa-envelope"></i> nuhharnb@code.edu.az</li>
-                <li><i class="fas fa-map-marker-alt"></i> Bakı, Azərbaycan</li>
             </ul>
 
             <div class="stats">
-                <div class="stat-box"><h4>640</h4><p>Giriş Puanı</p></div>
+                <div class="stat-box"><h4>640</h4><p>Puan</p></div>
                 <div class="stat-box"><h4>C1</h4><p>Almanca</p></div>
-                <div class="stat-box"><h4>RHCSA</h4><p>Sertifikat</p></div>
+                <div class="stat-box"><h4>RHCSA</h4><p>Linux</p></div>
             </div>
         </div>
 
@@ -220,62 +180,40 @@
         </div>
     </section>
 
-    <section id="skills" style="background: #fdfdfd;">
-        <h2 class="section-title" data-aos="fade-up">Texniki Uzmanlıq</h2>
+    <section id="skills">
+        <h2 style="margin-bottom: 30px; text-align: center;">Uzmanlıq Sahələri</h2>
         <div class="grid">
             <div class="card" data-aos="fade-up">
-                <i class="fas fa-shield-halved"></i>
+                <i class="fas fa-network-wired"></i>
                 <h3>Network Security</h3>
-                <p>DHCP, DNS və Client-Server strukturları üzrə dərin biliklər.</p>
-                <div class="tags">
-                    <span class="tag">Palo Alto</span>
-                    <span class="tag">Firewall</span>
-                    <span class="tag">Wireshark</span>
-                </div>
+                <p>DHCP, DNS və Firewall konfiqurasiyası üzrə praktiki biliklər.</p>
             </div>
-            
             <div class="card" data-aos="fade-up" data-aos-delay="100">
                 <i class="fab fa-linux"></i>
-                <h3>OS & Sanallaşdırma</h3>
-                <p>Red Hat Linux idarəetməsi və Active Directory strukturu.</p>
-                <div class="tags">
-                    <span class="tag">RHCSA</span>
-                    <span class="tag">Hyper-V</span>
-                    <span class="tag">Bash Scripting</span>
-                </div>
+                <h3>System Admin</h3>
+                <p>Red Hat Enterprise Linux (RHEL) mühitində sistem idarəetməsi.</p>
             </div>
-
             <div class="card" data-aos="fade-up" data-aos-delay="200">
-                <i class="fas fa-user-ninja"></i>
-                <h3>Penetration Testing</h3>
-                <p>Veb tətbiqetmələrin təhlükəsizlik analizi və zəifliklərin aşkarlanması.</p>
-                <div class="tags">
-                    <span class="tag">Burp Suite</span>
-                    <span class="tag">OWASP Top 10</span>
-                    <span class="tag">Metasploit</span>
-                </div>
+                <i class="fas fa-bug"></i>
+                <h3>Pentesting</h3>
+                <p>Zəifliklərin skan edilməsi və veb təhlükəsizlik analizləri.</p>
             </div>
         </div>
     </section>
 
     <footer id="contact">
-        <h2 style="font-size: 32px; margin-bottom: 10px;">Gəlin Birlikdə İşləyək!</h2>
-        <p style="opacity: 0.7;">Hər zaman yeni əməkdaşlıqlara və maraqlı layihələrə açığam.</p>
-        
+        <h3>Mənimlə Əlaqə</h3>
         <div class="socials">
             <a href="https://linkedin.com/in/nuhharbahramov" target="_blank"><i class="fab fa-linkedin-in"></i></a>
             <a href="https://github.com/nuhhar2006" target="_blank"><i class="fab fa-github"></i></a>
             <a href="mailto:nuhharnb@code.edu.az"><i class="fas fa-envelope"></i></a>
         </div>
-        
-        <p style="font-size: 12px; opacity: 0.5; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px;">
-            &copy; 2026 Nuhhər Bəhrəmov. Bütün hüquqlar qorunur.
-        </p>
+        <p style="font-size: 11px; opacity: 0.5;">&copy; 2026 Nuhhər Bəhrəmov</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({ duration: 1000, once: true, offset: 100 });
+        AOS.init({ duration: 800, once: true });
     </script>
 </body>
 </html>
