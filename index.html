@@ -86,44 +86,21 @@
 
         .hero-image { flex: 1; display: flex; justify-content: flex-end; }
         .profile-container {
-  width: 350px;
-  height: 350px;
-  border-radius: 50%; /* İlkin halı dairəvi */
-  overflow: hidden;
-  position: relative;
-  /* Animasiyanı əlavə edirik */
-  animation: liquidMorph 12s linear infinite;
-  background: var(--primary-orange); /* Şəkil arxasındakı rəng */
-}
+            width: 350px;
+            height: 350px;
+            border-radius: 50%;
+            border: 10px solid var(--bg-white);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+            background: var(--primary-orange);
+        }
+        .profile-container img { width: 100%; height: 100%; object-fit: cover; }
 
-/* Şəklin konteyner içində düzgün durması üçün (varsa, dəyişmirik) */
-.profile-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
-  top: 0;
-  left: 0;
-}
+        .stats-row { display: flex; flex-wrap: wrap; gap: 15px; margin-top: 30px; }
+        .stat-item { background: white; padding: 12px 20px; border-radius: 12px; border: 1px solid var(--light-blue); flex: 1; min-width: 100px; text-align: center; }
+        .stat-item h4 { font-size: 18px; color: var(--accent-orange); }
+        .stat-item p { font-size: 10px; font-weight: 700; color: #888; }
 
-/* Maye effekti verən @keyframes animasiyası */
-@keyframes liquidMorph {
-  0% {
-    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-  }
-  25% {
-    border-radius: 58% 42% 64% 36% / 46% 62% 38% 54%;
-  }
-  50% {
-    border-radius: 46% 54% 39% 61% / 58% 36% 64% 42%;
-  }
-  75% {
-    border-radius: 54% 46% 62% 38% / 36% 64% 42% 58%;
-  }
-  100% {
-    border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%;
-  }
-}
         /* --- Skills Grid --- */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .skill-card {
