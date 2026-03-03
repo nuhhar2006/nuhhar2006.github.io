@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="az">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +10,9 @@
     
     <style>
         :root {
-            --primary-orange: #FFCC80; /* Açık Turuncu */
+            --primary-orange: #FFCC80;
             --accent-orange: #FF9800;
-            --light-blue: #E3F2FD;    /* Açık Mavi */
+            --light-blue: #E3F2FD;
             --deep-blue: #1976D2;
             --text-dark: #2D3436;
             --bg-white: #FFFFFF;
@@ -29,7 +29,7 @@
         html { scroll-behavior: smooth; }
         body { background-color: var(--bg-white); color: var(--text-dark); line-height: 1.6; }
 
-        /* --- Navigasyon --- */
+        /* --- Naviqasiya --- */
         nav {
             display: flex;
             justify-content: space-between;
@@ -49,7 +49,7 @@
         .nav-links a { text-decoration: none; color: var(--text-dark); font-weight: 600; font-size: 14px; transition: 0.3s; }
         .nav-links a:hover { color: var(--accent-orange); }
 
-        /* --- Ortak Bölüm Yapısı --- */
+        /* --- Ümumi Bölmə Strukturu --- */
         section { padding: 100px 8%; min-height: auto; }
         .section-title { font-size: 32px; font-weight: 800; margin-bottom: 50px; text-align: left; position: relative; }
         .section-title::after { content: ''; width: 60px; height: 5px; background: var(--primary-orange); position: absolute; left: 0; bottom: -10px; border-radius: 10px; }
@@ -95,13 +95,13 @@
         }
         .profile-container img { width: 100%; height: 100%; object-fit: cover; }
 
-        /* --- İstatistikler (Daha dolu görünüm için) --- */
+        /* --- Statistika --- */
         .stats-row { display: flex; gap: 30px; margin-top: 40px; }
         .stat-item { background: white; padding: 15px 25px; border-radius: 15px; box-shadow: 0 10px 20px rgba(0,0,0,0.03); border: 1px solid var(--light-blue); }
         .stat-item h4 { font-size: 22px; color: var(--accent-orange); }
         .stat-item p { font-size: 12px; font-weight: 700; color: #888; text-transform: uppercase; }
 
-        /* --- Uzmanlık ve Yetenekler --- */
+        /* --- Mütəxəssislik və Bacarıqlar --- */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
         .skill-card {
             background: var(--bg-gray);
@@ -116,12 +116,38 @@
         .skill-list { display: flex; flex-wrap: wrap; gap: 8px; }
         .skill-tag { background: white; padding: 4px 12px; border-radius: 8px; font-size: 12px; font-weight: 600; border: 1px solid var(--light-blue); }
 
-        /* --- Deneyim & Eğitim --- */
+        /* --- Təcrübə & Təhsil --- */
         .timeline { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-        .timeline-card { background: white; padding: 30px; border-radius: 20px; border-left: 6px solid var(--primary-orange); box-shadow: 0 10px 30px rgba(0,0,0,0.02); margin-bottom: 20px; }
+        .timeline-card { 
+            background: white; 
+            padding: 25px; 
+            border-radius: 20px; 
+            border-left: 6px solid var(--primary-orange); 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.02); 
+            margin-bottom: 20px; 
+            display: flex;
+            align-items: center; 
+            gap: 20px; 
+            transition: 0.3s;
+        }
+        .timeline-card:hover { transform: translateX(10px); }
+        
+        .card-logo {
+            width: 65px;
+            height: 65px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f9f9f9;
+            border-radius: 12px;
+            padding: 5px;
+        }
+        .card-logo img { width: 100%; height: 100%; object-fit: contain; }
+        .card-content { flex-grow: 1; }
         .timeline-date { color: var(--deep-blue); font-weight: 700; font-size: 14px; }
 
-        /* --- Projeler --- */
+        /* --- Layihələr --- */
         .project-card {
             background: white;
             border-radius: 25px;
@@ -134,7 +160,7 @@
         .project-info { padding: 30px; }
         .project-link { color: var(--accent-orange); text-decoration: none; font-weight: 700; font-size: 14px; }
 
-        /* --- İletişim Footer --- */
+        /* --- Footer --- */
         footer { background: var(--text-dark); color: white; padding: 80px 8%; text-align: center; border-radius: 50px 50px 0 0; }
         .social-links a { color: white; font-size: 24px; margin: 0 15px; transition: 0.3s; }
         .social-links a:hover { color: var(--primary-orange); }
@@ -145,6 +171,7 @@
             .profile-container { width: 300px; height: 300px; }
             .timeline { grid-template-columns: 1fr; }
             .stats-row { justify-content: center; }
+            .timeline-card { padding: 20px; }
         }
     </style>
 </head>
@@ -154,30 +181,30 @@
         <div class="logo">NUHHAR.SEC</div>
         <ul class="nav-links">
             <li><a href="#hero">Giriş</a></li>
-            <li><a href="#about">Uzmanlık</a></li>
-            <li><a href="#edu">Eğitim</a></li>
-            <li><a href="#projects">Projeler</a></li>
-            <li><a href="#contact">İletişim</a></li>
+            <li><a href="#about">Mütəxəssislik</a></li>
+            <li><a href="#edu">Təhsil</a></li>
+            <li><a href="#projects">Layihələr</a></li>
+            <li><a href="#contact">Əlaqə</a></li>
         </ul>
     </nav>
 
     <section class="hero" id="hero">
         <div class="hero-content" data-aos="fade-right">
-            <span class="hello-badge">Merhaba, Ben</span>
+            <span class="hello-badge">Salam, Mən</span>
             <h1>Nuhhər Bəhrəmov</h1>
             <h2>Junior Cyber Security Specialist</h2>
-            <p>Siber dünyayı daha güvenli hale getirmek için çalışan, ağ güvenliği ve sızma testleri konularında tutkulu bir araştırmacıyım. </p>
+            <p>Kiber dünyanı daha təhlükəsiz etmək üçün çalışan, şəbəkə təhlükəsizliyi və sızma testləri mövzularında həvəsli bir tədqiqatçıyam.</p>
             
             <ul class="contact-minimal">
-                <li><i class="fas fa-phone"></i> +994 70 869 09 89 [cite: 4]</li>
-                <li><i class="fas fa-envelope"></i> nuhharnb@code.edu.az [cite: 4]</li>
-                <li><i class="fas fa-map-marker-alt"></i> Bakü, Azerbaycan [cite: 11]</li>
+                <li><i class="fas fa-phone"></i> +994 70 869 09 89</li>
+                <li><i class="fas fa-envelope"></i> nuhharnb@code.edu.az</li>
+                <li><i class="fas fa-map-marker-alt"></i> Bakı, Azərbaycan</li>
             </ul>
 
             <div class="stats-row">
-                <div class="stat-item"><h4>640</h4><p>Giriş Puanı </p></div>
-                <div class="stat-item"><h4>C1</h4><p>Almanca </p></div>
-                <div class="stat-item"><h4>RHCSA</h4><p>Sertifika </p></div>
+                <div class="stat-item"><h4>640</h4><p>Qəbul Balı</p></div>
+                <div class="stat-item"><h4>C1</h4><p>Alman Dili</p></div>
+                <div class="stat-item"><h4>RHCSA</h4><p>Sertifikat</p></div>
             </div>
         </div>
         <div class="hero-image" data-aos="fade-left">
@@ -188,86 +215,111 @@
     </section>
 
     <section id="about">
-        <h2 class="section-title" data-aos="fade-up">Teknik Uzmanlık</h2>
+        <h2 class="section-title" data-aos="fade-up">Texniki Mütəxəssislik</h2>
         <div class="skills-grid">
             <div class="skill-card" data-aos="zoom-in">
                 <i class="fas fa-network-wired"></i>
                 <h3>Network Security</h3>
-                <p>DHCP, DNS ve Client-Server yapılarında derinlemesine bilgi sahibiyim. [cite: 18, 19]</p>
+                <p>DHCP, DNS və Client-Server strukturlarında dərin biliklərə sahibəm.</p>
                 <div class="skill-list">
-                    <span class="skill-tag">Packet Tracer [cite: 26]</span>
-                    <span class="skill-tag">Palo Alto [cite: 31]</span>
+                    <span class="skill-tag">Packet Tracer</span>
+                    <span class="skill-tag">Palo Alto</span>
                     <span class="skill-tag">Firewall</span>
                 </div>
             </div>
             <div class="skill-card" data-aos="zoom-in" data-delay="100">
                 <i class="fab fa-linux"></i>
                 <h3>OS & Virtualization</h3>
-                <p>İleri seviye Linux (Red Hat) ve sanallaştırma teknolojileri yönetimi. [cite: 16, 21]</p>
+                <p>İrəli səviyyə Linux (Red Hat) və virtualizasiya texnologiyalarının idarə edilməsi.</p>
                 <div class="skill-list">
-                    <span class="skill-tag">Red Hat Linux [cite: 28]</span>
-                    <span class="skill-tag">Hyper-V [cite: 20]</span>
-                    <span class="skill-tag">Active Directory [cite: 20]</span>
+                    <span class="skill-tag">Red Hat Linux</span>
+                    <span class="skill-tag">Hyper-V</span>
+                    <span class="skill-tag">Active Directory</span>
                 </div>
             </div>
             <div class="skill-card" data-aos="zoom-in" data-delay="200">
                 <i class="fas fa-user-secret"></i>
                 <h3>Penetration Testing</h3>
-                <p>Sızma testi metodolojileri ve paket analizi üzerine çalışmalar. [cite: 20, 50]</p>
+                <p>Sızma testi metodologiyaları və paket analizi üzrə tədqiqatlar.</p>
                 <div class="skill-list">
-                    <span class="skill-tag">Burp Suite [cite: 27]</span>
-                    <span class="skill-tag">TryHackMe [cite: 27]</span>
-                    <span class="skill-tag">Authentication Logic [cite: 17]</span>
+                    <span class="skill-tag">Burp Suite</span>
+                    <span class="skill-tag">TryHackMe</span>
+                    <span class="skill-tag">Authentication Logic</span>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="edu" style="background-color: var(--bg-gray);">
-        <h2 class="section-title" data-aos="fade-up">Eğitim & Deneyim</h2>
+        <h2 class="section-title" data-aos="fade-up">Təhsil & Təcrübə</h2>
         <div class="timeline">
             <div>
-                <h3 style="margin-bottom: 25px; color: var(--accent-orange);">Akademik Yolculuk</h3>
+                <h3 style="margin-bottom: 25px; color: var(--accent-orange);">Akademik Yol</h3>
+                
                 <div class="timeline-card" data-aos="fade-up">
-                    <span class="timeline-date">2024 - 2028 </span>
-                    <h4>Bilgi Güvenliği (Lisans)</h4>
-                    <p>ADNSU (Azerbaycan Devlet Petrol ve Sanayi Üniversitesi) [cite: 6, 7]</p>
-                    <small>Ortalama: 84/100 </small>
+                    <div class="card-logo">
+                        <img src="ADNSU.png" alt="ADNSU">
+                    </div>
+                    <div class="card-content">
+                        <span class="timeline-date">2024 - 2028</span>
+                        <h4>İnformasiya Təhlükəsizliyi (Bakalavr)</h4>
+                        <p>ADNSU (Azərbaycan Dövlət Neft və Sənaye Universiteti)</p>
+                        <small>Ortalama: 84/100</small>
+                    </div>
                 </div>
+
                 <div class="timeline-card" data-aos="fade-up">
-                    <span class="timeline-date">2025 - 2026 </span>
-                    <h4>Kiber Təhlükəsizlik</h4>
-                    <p>Code Academy [cite: 7, 45]</p>
+                    <div class="card-logo">
+                        <img src="code.png" alt="Code Academy">
+                    </div>
+                    <div class="card-content">
+                        <span class="timeline-date">2025 - 2026</span>
+                        <h4>Kiber Təhlükəsizlik</h4>
+                        <p>Code Academy</p>
+                    </div>
                 </div>
             </div>
+
             <div>
-                <h3 style="margin-bottom: 25px; color: var(--accent-orange);">Profesyonel Geçmiş</h3>
+                <h3 style="margin-bottom: 25px; color: var(--accent-orange);">Peşəkar Keçmiş</h3>
+                
                 <div class="timeline-card" data-aos="fade-up">
-                    <span class="timeline-date">09/2025 - Devam Ediyor [cite: 32]</span>
-                    <h4>Koordinatör</h4>
-                    <p>NAYORA [cite: 24, 33]</p>
+                    <div class="card-logo">
+                        <img src="nayora.png" alt="NAYORA">
+                    </div>
+                    <div class="card-content">
+                        <span class="timeline-date">09/2025 - Davam Edir</span>
+                        <h4>Koordinatör</h4>
+                        <p>NAYORA</p>
+                    </div>
                 </div>
+
                 <div class="timeline-card" data-aos="fade-up">
-                    <span class="timeline-date">2026 </span>
-                    <h4>RHCSA Sertifikası</h4>
-                    <p>Red Hat Certified System Administrator </p>
-                    <small>ID: 260-023-510 </small>
+                    <div class="card-logo">
+                        <img src="redhat.png" alt="RHCSA">
+                    </div>
+                    <div class="card-content">
+                        <span class="timeline-date">2026</span>
+                        <h4>RHCSA Sertifikatı</h4>
+                        <p>Red Hat Certified System Administrator</p>
+                        <small>ID: 260-023-510</small>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projects">
-        <h2 class="section-title" data-aos="fade-up">Öne Çıkan Projeler</h2>
+        <h2 class="section-title" data-aos="fade-up">Seçilmiş Layihələr</h2>
         <div class="skills-grid">
             <div class="project-card" data-aos="flip-left">
                 <div class="project-img">
                     <i class="fab fa-redhat fa-5x" style="color: #cc0000;"></i>
                 </div>
                 <div class="project-info">
-                    <h3>Linux Public Service </h3>
-                    <p>Red Hat Linux üzerinde Container teknolojileri kullanarak servis dağıtımı. </p>
-                    <a href="#" class="project-link">DETAYLAR →</a>
+                    <h3>Linux Public Service</h3>
+                    <p>Red Hat Linux üzərində Container texnologiyalarından istifadə edərək servis paylanması.</p>
+                    <a href="#" class="project-link">ƏTRAFLI →</a>
                 </div>
             </div>
             <div class="project-card" data-aos="flip-left" data-aos-delay="100">
@@ -275,9 +327,9 @@
                     <i class="fas fa-shield-alt fa-5x" style="color: var(--accent-orange);"></i>
                 </div>
                 <div class="project-info">
-                    <h3>Packet Analysis & Pentest </h3>
-                    <p>Burp Suite kullanılarak gerçekleştirilen paket analizi ve güvenlik testleri. </p>
-                    <a href="#" class="project-link">DETAYLAR →</a>
+                    <h3>Packet Analysis & Pentest</h3>
+                    <p>Burp Suite istifadə edərək həyata keçirilən paket analizi və təhlükəsizlik testləri.</p>
+                    <a href="#" class="project-link">ƏTRAFLI →</a>
                 </div>
             </div>
             <div class="project-card" data-aos="flip-left" data-aos-delay="200">
@@ -285,8 +337,8 @@
                     <i class="fas fa-users fa-5x" style="color: var(--deep-blue);"></i>
                 </div>
                 <div class="project-info">
-                    <h3>Volunteer Plus </h3>
-                    <p>Azerbaycan'ın en büyük gençlik gönüllülük şebekesinin kuruculuğu. </p>
+                    <h3>Volunteer Plus</h3>
+                    <p>Azərbaycanın ən böyük gənclər könüllülük şəbəkəsinin quruculuğu.</p>
                     <a href="https://instagram.com/volunteer.plus" target="_blank" class="project-link">İNCELE →</a>
                 </div>
             </div>
@@ -294,14 +346,13 @@
     </section>
 
     <footer id="contact">
-        <h2 style="font-size: 40px; margin-bottom: 20px;">Bir Projeniz mi Var?</h2>
-        <p style="margin-bottom: 40px; opacity: 0.8;">Her zaman yeni iş birliklerine ve siber güvenlik projelerine açığım.</p>
+        <h2 style="font-size: 40px; margin-bottom: 20px;">Layihəniz var?</h2>
         <div class="social-links" style="margin-bottom: 40px;">
             <a href="https://linkedin.com/in/nuhharbahramov" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://github.com/nuhhar2006" target="_blank"><i class="fab fa-github"></i></a>
             <a href="mailto:nuhharnb@code.edu.az"><i class="fas fa-envelope"></i></a>
         </div>
-        <p style="font-size: 13px; opacity: 0.5;">&copy; 2024 Nuhhər Bəhrəmov. Tüm Hakları Saklıdır.</p>
+        <p style="font-size: 13px; opacity: 0.5;">&copy; 2026 Nuhhər Bəhrəmov. Bütün hüquqlar qorunur.</p>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
