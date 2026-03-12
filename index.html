@@ -250,64 +250,140 @@
         </div>
     </section>
 
+        <style>
+    .extra-info{
+        max-height:0;
+        overflow:hidden;
+        transition: all 0.4s ease;
+        opacity:0;
+        margin-top:10px;
+        font-size:14px;
+        color:#555;
+    }
+    
+    .timeline-card.active .extra-info{
+        max-height:200px;
+        opacity:1;
+    }
+    
+    .timeline-card{
+        cursor:pointer;
+        transition:0.3s;
+    }
+    
+    .timeline-card:hover{
+        transform:translateY(-5px);
+    }
+    </style>
+    
+    
     <section id="edu" style="background-color: var(--bg-gray);">
-        <h2 class="section-title" data-aos="fade-up">Təhsil & Təcrübə</h2>
-        <div class="timeline">
-            <div>
-                <h3 style="margin-bottom: 25px; color: var(--accent-orange);">Akademik Yol</h3>
-                
-                <div class="timeline-card" data-aos="fade-up">
-                    <div class="card-logo">
-                        <img src="ADNSU.png" alt="ADNSU">
+            <h2 class="section-title" data-aos="fade-up">Təhsil & Təcrübə</h2>
+            <div class="timeline">
+                <div>
+                    <h3 style="margin-bottom: 25px; color: var(--accent-orange);">Akademik Yol</h3>
+                    
+                    <div class="timeline-card" data-aos="fade-up">
+                        <div class="card-logo">
+                            <img src="ADNSU.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="timeline-date">2024 - 2028</span>
+                            <h4>İnformasiya Təhlükəsizliyi (Bakalavr)</h4>
+                            <p>ADNSU</p>
+                            <small>Ortalama: 84/100</small>
+    
+                            <div class="extra-info">
+                                • Network Security<br>
+                                • Linux Administration<br>
+                                • Cryptography<br>
+                                • SIEM / Wazuh / SOC
+                            </div>
+    
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <span class="timeline-date">2024 - 2028</span>
-                        <h4>İnformasiya Təhlükəsizliyi (Bakalavr)</h4>
-                        <p>ADNSU (Azərbaycan Dövlət Neft və Sənaye Universiteti)</p>
-                        <small>Ortalama: 84/100</small>
+    
+    
+                    <div class="timeline-card" data-aos="fade-up">
+                        <div class="card-logo">
+                            <img src="code.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="timeline-date">2025 - 2026</span>
+                            <h4>Kiber Təhlükəsizlik</h4>
+                            <p>Code Academy</p>
+    
+                            <div class="extra-info">
+                                • Penetration Testing<br>
+                                • Web Security<br>
+                                • Linux<br>
+                                • Networking
+                            </div>
+    
+                        </div>
                     </div>
+    
                 </div>
-
-                <div class="timeline-card" data-aos="fade-up">
-                    <div class="card-logo">
-                        <img src="code.png" alt="Code Academy">
+    
+                <div>
+                    <h3 style="margin-bottom: 25px; color: var(--accent-orange);">Peşəkar Keçmiş</h3>
+                    
+                    <div class="timeline-card" data-aos="fade-up">
+                        <div class="card-logo">
+                            <img src="nayora.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="timeline-date">09/2025 - Davam Edir</span>
+                            <h4>Koordinatör</h4>
+                            <p>NAYORA</p>
+    
+                            <div class="extra-info">
+                                • Project coordination<br>
+                                • Event management<br>
+                                • Team work<br>
+                                • Reporting
+                            </div>
+    
+                        </div>
                     </div>
-                    <div class="card-content">
-                        <span class="timeline-date">2025 - 2026</span>
-                        <h4>Kiber Təhlükəsizlik</h4>
-                        <p>Code Academy</p>
+    
+    
+                    <div class="timeline-card" data-aos="fade-up">
+                        <div class="card-logo">
+                            <img src="redhat.png">
+                        </div>
+                        <div class="card-content">
+                            <span class="timeline-date">2026</span>
+                            <h4>RHCSA Sertifikatı</h4>
+                            <p>Red Hat Certified System Administrator</p>
+                            <small>ID: 260-023-510</small>
+    
+                            <div class="extra-info">
+                                • Linux Admin<br>
+                                • LVM<br>
+                                • Users & Permissions<br>
+                                • Systemd
+                            </div>
+    
+                        </div>
                     </div>
+    
                 </div>
             </div>
-
-            <div>
-                <h3 style="margin-bottom: 25px; color: var(--accent-orange);">Peşəkar Keçmiş</h3>
-                
-                <div class="timeline-card" data-aos="fade-up">
-                    <div class="card-logo">
-                        <img src="nayora.png" alt="NAYORA">
-                    </div>
-                    <div class="card-content">
-                        <span class="timeline-date">09/2025 - Davam Edir</span>
-                        <h4>Koordinatör</h4>
-                        <p>NAYORA</p>
-                    </div>
-                </div>
-
-                <div class="timeline-card" data-aos="fade-up">
-                    <div class="card-logo">
-                        <img src="redhat.png" alt="RHCSA">
-                    </div>
-                    <div class="card-content">
-                        <span class="timeline-date">2026</span>
-                        <h4>RHCSA Sertifikatı</h4>
-                        <p>Red Hat Certified System Administrator</p>
-                        <small>ID: 260-023-510</small>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    
+    
+    <script>
+    document.querySelectorAll(".timeline-card").forEach(card => {
+    
+        card.addEventListener("click", () => {
+    
+            card.classList.toggle("active");
+    
+        });
+    
+    });
+    </script>
 
     <section id="projects">
         <h2 class="section-title" data-aos="fade-up">Seçilmiş Layihələr</h2>
